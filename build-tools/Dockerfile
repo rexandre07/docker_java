@@ -6,8 +6,7 @@ RUN wget https://www-eu.apache.org/dist/maven/maven-3/3.6.2/binaries/apache-mave
 RUN tar zxvf apache-maven-3.6.2-bin.tar.gz
 
 # Setup PATH
-RUN export M2_HOME=/opt/apache-maven-3.6.2
-RUN export PATH=$PATH:/opt/apache-maven-3.6.2/bin
+RUN ln -s /opt/apache-maven-3.6.2/bin/mvn /usr/bin/mvn
 
 # Check MVN Version
 RUN mvn -version
@@ -18,8 +17,7 @@ RUN wget https://services.gradle.org/distributions/gradle-5.6.3-bin.zip
 RUN unzip -d /opt/gradle gradle-5.6.3-bin.zip && ls -lah /opt/gradle/gradle-5.6.3
 
 # Setup PATH
-RUN export GRADLE_HOME=/opt/gradle/gradle-5.6.3
-RUN export PATH=$PATH:/opt/gradle/gradle-5.6.3/bin
+RUN ln -s /opt/gradle/gradle-5.6.3/bin/gradle /usr/bin/gradle
 
 # Check Gradle Version
 RUN gradle -v
