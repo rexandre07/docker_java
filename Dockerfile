@@ -11,5 +11,5 @@ RUN rpm -ivh jdk-8u131-linux.rpm
 RUN rm -f jdk-8u131-linux.rpm
 
 # Confirm JAVA Installation
-RUN java --version
+RUN java -version
 RUN which java
