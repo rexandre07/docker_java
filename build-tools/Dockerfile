@@ -7,7 +7,7 @@ RUN tar zxvf apache-maven-3.6.2-bin.tar.gz
 
 # Setup PATH
 RUN export M2_HOME=/opt/apache-maven-3.6.2
-RUN 'export PATH=$PATH:$M2_HOME/bin'
+RUN export PATH=$PATH:/opt/apache-maven-3.6.2/bin
 
 # Check MVN Version
 RUN mvn -version
@@ -19,7 +19,7 @@ RUN unzip -d /opt/gradle gradle-5.6.3-bin.zip && ls -lah /opt/gradle/gradle-5.6.
 
 # Setup PATH
 RUN export GRADLE_HOME=/opt/gradle/gradle-5.6.3
-RUN 'export PATH=$PATH:$GRADLE_HOME/bin'
+RUN export PATH=$PATH:/opt/gradle/gradle-5.6.3/bin
 
 # Check Gradle Version
 RUN gradle -v
