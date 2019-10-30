@@ -2,7 +2,7 @@ FROM centos:7
 
 # Install Dependencies
 RUN yum update -y && yum upgrade -y
-RUN yum install vim tree wget -y
+RUN yum install vim tree wget zip unzip -y
 
 # Install JDK 8
 WORKDIR /tmp
